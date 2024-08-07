@@ -1,3 +1,17 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Auth from "./pages/auth/index";
+import Chat from "./pages/chat/index";
+import Profile from "./pages/profile/index";
+
 export default function App() {
-    return <h1 className="text-3xl text-red-800 font-bold underline">Hello world!</h1>;
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/auth" element={<Auth />} />
+                <Route path="/chat" element={<Chat />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="*" element={<Navigate to="/auth" />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
