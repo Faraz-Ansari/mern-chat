@@ -1,3 +1,7 @@
+import { useAppStore } from "@/store";
+
 export default function Profile() {
-    return <div>index from profile</div>;
+    const {userInfo} = useAppStore();
+
+    return <div>{userInfo.email}</div>;
 }
